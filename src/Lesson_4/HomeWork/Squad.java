@@ -14,7 +14,7 @@ public class Squad {
 
         for (int i = 0; i < team.length; i++) {
             if (team[i] != null)  return team[i];
-        }
+        } return null;
     }
 
     public boolean hasAliveWarriors() {
@@ -22,6 +22,5 @@ public class Squad {
             if (team[i] != null )  return true;
         }
         return false;
-
     }
 }
