@@ -1,6 +1,7 @@
 package Lesson_4.HomeWork;
 
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,6 +25,21 @@ public class DataHelper {
     }
 
     public String getFormattedDiif() {
-        return "";
+        Duration duration = Duration.between(startTime, currentTime);
+        long days = duration.toDays();
+        long hours = 0;
+        long minutes = 0;
+
+        /*
+        * Условный оператор используется для правильного расчёта времени по
+        * каждому разряду.
+        * Пример: разность = 185 минут.
+        * дней: 0, часов 3, минут 185  ---> не правильно.
+        * дней: 0, часов 3, минут 5    ---> правильно.
+        */
+        if ((duration.toMinutes() % 60) != 0)  minutes = duration.toMinutes() % 60;
+        if ((duration.toHours() % 24) != 0)  hours = duration.toHours() % 24;
+
+        return "дней " + days + ", часов " + hours + ", минут " + minutes;
     }
 }
