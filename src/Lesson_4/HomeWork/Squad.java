@@ -8,7 +8,13 @@ import java.util.Random;
 public class Squad {
 
     static Random random = new Random();
-    Warrior[] team = new Warrior[5];
+
+    String name;
+    Warrior[] team = new Warrior[random.nextInt(6) + 10];
+
+    Squad(String name) {
+        this.name = name;
+    }
 
     public Warrior getRandomWarrior() {
 
@@ -22,5 +28,10 @@ public class Squad {
             if (team[i] != null )  return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

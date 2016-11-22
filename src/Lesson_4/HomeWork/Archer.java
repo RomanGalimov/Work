@@ -8,6 +8,7 @@ public class Archer implements Warrior {
     int health = 80;
     int damage = 80;
     String squadName;
+    String name;
 
     @Override
     public int attack() {
@@ -28,5 +29,10 @@ public class Archer implements Warrior {
     @Override
     public void setSquadName(String name) {
         squadName = name;
+    }
+
+    @Override
+    public String toString() {
+        return "имя: " + name + ", класс: " + getClass().getSimpleName() + ", отряд: " + squadName;
     }
 }

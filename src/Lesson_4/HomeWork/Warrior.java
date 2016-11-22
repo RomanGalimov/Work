@@ -9,4 +9,7 @@ public interface Warrior {
     void takeDamage(int damage);
     boolean isAlive();
     void setSquadName(String name);
+    default void atackingUnit(Warrior unit) {
+        unit.takeDamage(this.attack());
+    }
 }

@@ -9,8 +9,8 @@ public class Battle {
 
     public static void main(String[] args) {
 
-        Squad squad1 = new Squad();
-
+        Squad english = new Squad("England");
+        Squad french = new Squad("France");
 
     }
 }
