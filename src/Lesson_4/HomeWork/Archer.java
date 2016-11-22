@@ -10,6 +10,14 @@ public class Archer implements Warrior {
     String squadName;
     String name;
 
+    Archer(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
     @Override
     public int attack() {
         return damage;

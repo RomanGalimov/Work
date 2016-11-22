@@ -13,18 +13,18 @@ public class DataHelper {
     static LocalDateTime startTime;
     static LocalDateTime currentTime;
 
-    public String getFormattedStartDate() {
+    static public String getFormattedStartDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("G yyy-MM-dd | HH:mm:ss");
         startTime = LocalDateTime.now().minusYears(1500);
         currentTime = LocalDateTime.now().minusYears(1500);
         return startTime.format(formatter).toString();
     }
 
-    public void skipTime() {
+    static public void skipTime() {
         currentTime = currentTime.plusMinutes(45);
     }
 
-    public String getFormattedDiif() {
+    static public String getFormattedDiif() {
         Duration duration = Duration.between(startTime, currentTime);
         long days = duration.toDays();
         long hours = 0;

@@ -10,6 +10,14 @@ public class Viking implements Warrior {
     String squadName;
     String name;
 
+    Viking(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
     @Override
     public int attack() {
         return damage;

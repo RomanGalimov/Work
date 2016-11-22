@@ -10,6 +10,14 @@ public class Barbarian implements Warrior{
     String squadName;
     String name;
 
+    Barbarian(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
     @Override
     public int attack() {
         return damage;
