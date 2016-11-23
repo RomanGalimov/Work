@@ -22,21 +22,41 @@ public class Battle {
 
 
         //Fase1
-        if (english.hasAliveWarriors()) {
+        while (true) {
 
-            while (true) {
-                iEnglish = Squad.random.nextInt(english.team.length);
-                if (english.team[iEnglish].isAlive()) break;
+            if (english.hasAliveWarriors()) {
+
+                if (!french.hasAliveWarriors()) {
+                    System.out.println("отряд \"England\" победил");
+                    break;
+                } else {
+
+                    while (true) {
+                        iEnglish = Squad.random.nextInt(english.team.length);
+                        if (english.team[iEnglish].isAlive()) break;
+                    }
+
+                    while (true) {
+                        iFrench = Squad.random.nextInt(french.team.length);
+                        if (french.team[iFrench].isAlive()) break;
+                    }
+
+                    english.team[iEnglish].atackingUnit(french.team[iFrench]);
+
+                    System.out.println(english.team[iEnglish].getClass().getSimpleName() + " "
+                            + english.team[iEnglish].getWarriorName() + " из отряда \"" +
+                            english + "\" нанёс " + french.team[iFrench].getClass().getSimpleName() + "`у "
+                            + french.team[iFrench].getWarriorName() + " из отряда \"" + french + " "
+                            + english.team[iEnglish].getDamage() + " единиц урона!");
+                }
+
+            } else {
+                System.out.println("отряд \"France\" победил");
+                break;
             }
 
-
-        } else {
-            System.out.println("отряд \"France\" победил");
-            return;
-        }
-
-        //Fase2
-        if (french.hasAliveWarriors()) {
+            //Fase2
+        /*if (french.hasAliveWarriors()) {
 
             while (true) {
                 iFrench = Squad.random.nextInt(french.team.length);
@@ -81,11 +101,13 @@ public class Battle {
             System.out.println("Отряд: " + french.name + "победил!");
             DataHelper.getFormattedDiif();
             return;
-        }
+        }*/
 
         /*while (english.hasAliveWarriors() && french.hasAliveWarriors()) {
 
         }*/
+
+        }
 
     }
 }

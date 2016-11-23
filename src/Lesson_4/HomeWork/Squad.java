@@ -28,7 +28,7 @@ public class Squad {
             } if (randomDigit == 1) {
                 team[i] = new Archer(getRandomNameWarrior());
                 team[i].setSquadName(name);
-            } else {
+            } if (randomDigit == 2){
                 team[i] = new Barbarian(getRandomNameWarrior());
                 team[i].setSquadName(name);
             }
