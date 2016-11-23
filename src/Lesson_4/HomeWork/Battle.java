@@ -28,6 +28,8 @@ public class Battle {
                 iEnglish = Squad.random.nextInt(english.team.length);
                 if (english.team[iEnglish].isAlive()) break;
             }
+
+
         } else {
             System.out.println("отряд \"France\" победил");
             return;
