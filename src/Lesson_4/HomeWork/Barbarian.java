@@ -19,6 +19,11 @@ public class Barbarian implements Warrior{
     }
 
     @Override
+    public String getWarriorName() {
+        return name;
+    }
+
+    @Override
     public int attack() {
         return damage;
     }
@@ -26,6 +31,11 @@ public class Barbarian implements Warrior{
     @Override
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 
     @Override
@@ -37,6 +47,11 @@ public class Barbarian implements Warrior{
     @Override
     public void setSquadName(String name) {
         squadName = name;
+    }
+
+    @Override
+    public String getSquadName() {
+        return squadName;
     }
 
     @Override

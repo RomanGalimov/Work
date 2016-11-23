@@ -40,19 +40,22 @@ public class Squad {
         return warriorName[index];
     }
 
-    public Warrior getRandomWarrior() {
+    /*public Warrior getRandomWarrior() {
 
         for (int i = 0; i < team.length; i++) {
             if (team[i] != null)  return team[i];
         } return null;
-    }
+    }*/
 
+    /*
+    * Можно было бы оставить после цикла "return false", но тогда, чтобы
+    *
+     */
     public boolean hasAliveWarriors() {
         for (int i = 0; i < team.length; i++) {
             if (team[i].isAlive())  return true;
-            else  return false;
         }
-
+        return false;
     }
 
     @Override
