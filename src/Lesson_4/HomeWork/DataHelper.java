@@ -40,6 +40,6 @@ public class DataHelper {
         if ((duration.toMinutes() % 60) != 0)  minutes = duration.toMinutes() % 60;
         if ((duration.toHours() % 24) != 0)  hours = duration.toHours() % 24;
 
-        return "дней " + days + ", часов " + hours + ", минут " + minutes;
+        return days + " дней, " + hours + " часов, " + minutes + " минут.";
     }
 }
