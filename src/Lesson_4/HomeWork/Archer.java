@@ -19,7 +19,7 @@ public class Archer implements Warrior {
     }
 
     @Override
-    public String getWarriorName() {
+    public String getName() {
         return name;
     }
 
@@ -57,5 +57,16 @@ public class Archer implements Warrior {
     @Override
     public String toString() {
         return "имя: " + name + ", класс: " + getClass().getSimpleName() + ", отряд: " + squadName;
+    }
+
+    @Override
+    public Warrior clone() throws CloneNotSupportedException {
+        Archer obj = (Archer) super.clone();
+        obj.health = health;
+        obj.damage = damage;
+        obj.squadName = squadName;
+        obj.name = name;
+
+        return obj;
     }
 }

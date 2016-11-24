@@ -1,17 +1,13 @@
 package Lesson_4.HomeWork;
 
-import java.time.*;
-
 /**
  * Created by Admin on 20.11.16.
  */
 public class Battle {
+
+    //индекс массива случайного бойца отряда
     static int iEnglish;
     static int iFrench;
-
-
-
-
 
     public static void main(String[] args) {
 
@@ -20,13 +16,13 @@ public class Battle {
 
         System.out.println("Бой начался " + DataHelper.getFormattedStartDate());
 
-        //Fase1
         while (true) {
 
+            //отряд англичан атакует отряд французов
             if (english.hasAliveWarriors()) {
 
                 if (!french.hasAliveWarriors()) {
-                    System.out.println("отряд \"England\" победил");
+                    System.out.println("отряд \"England\" победил уничтожив отряд \"France\"");
                     break;
                 } else {
 
@@ -44,23 +40,25 @@ public class Battle {
                     english.team[iEnglish].atackingUnit(french.team[iFrench]);
 
                     System.out.println(english.team[iEnglish].getClass().getSimpleName() + " "
-                            + english.team[iEnglish].getWarriorName() + " из отряда \"" +
+                            + english.team[iEnglish].getName() + " из отряда \"" +
                             english + "\" нанёс " + french.team[iFrench].getClass().getSimpleName() + "`у "
-                            + french.team[iFrench].getWarriorName() + " из отряда \"" + french + " "
+                            + french.team[iFrench].getName() + " из отряда \"" + french + " "
                             + english.team[iEnglish].getDamage() + " единиц урона!");
                 }
 
             } else {
-                System.out.println("отряд \"France\" победил");
+                System.out.println("отряд \"France\" победил уничтожив отряд \"England\"");
                 break;
             }
 
+            //проматываем 45 минут
             DataHelper.skipTime();
 
+            //отряд франузов атакует отряд англичан
             if (french.hasAliveWarriors()) {
 
                 if (!english.hasAliveWarriors()) {
-                    System.out.println("отряд \"France\" победил");
+                    System.out.println("отряд \"France\" победил уничтожив отряд \"England\"");
                     break;
                 } else {
 
@@ -78,18 +76,19 @@ public class Battle {
                     french.team[iFrench].atackingUnit(english.team[iEnglish]);
 
                     System.out.println(french.team[iFrench].getClass().getSimpleName() + " "
-                            + french.team[iFrench].getWarriorName() + " из отряда \"" +
+                            + french.team[iFrench].getName() + " из отряда \"" +
                             french + "\" нанёс " + english.team[iEnglish].getClass().getSimpleName() + "`у "
-                            + english.team[iEnglish].getWarriorName() + " из отряда \"" + english + " "
+                            + english.team[iEnglish].getName() + " из отряда \"" + english + " "
                             + french.team[iFrench].getDamage() + " единиц урона!");
                 }
 
             } else {
-                System.out.println("отряд \"England\" победил");
+                System.out.println("отряд \"England\" победил уничтожив отряд \"France\"");
                 break;
             }
         }
 
+        //выводим длительность боя
         System.out.println("Бой окончен за " + DataHelper.getFormattedDiif());
 
 
